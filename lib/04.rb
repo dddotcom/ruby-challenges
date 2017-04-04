@@ -1,4 +1,4 @@
-# Create a program that asks the user to guess a number between 1 and 100. Once the user guesses a number, 
+# Create a program that asks the user to guess a number between 1 and 100. Once the user guesses a number,
 # the program should say, higher, lower, or tell the user that he got the number correct. The user
 # should continue to make guesses until he guesses correctly. Also, once the user guesses correctly,
 # the program should print the number of guesses needed to arrive at the correct answer. Below is sample output:
@@ -18,3 +18,24 @@
 # The number is higher than 18.  Guess again
 # 19
 # You got it in 7 tries
+
+def guess()
+  answer = rand(1..100)
+  guess = 101
+  numGuesses = 0
+  puts "Guess a number between 1 and 100"
+  while guess != answer do
+    guess = gets.chomp
+    numGuesses += 1
+    if guess.to_i < answer
+      puts "The number is higher than #{guess}. Guess again"
+    elsif guess.to_i > answer
+      puts "The number is lower than #{guess}. Guess again"
+    else
+      puts "You got it in #{numGuesses} tries"
+      return
+    end
+  end
+end
+
+guess()

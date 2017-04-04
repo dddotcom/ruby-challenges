@@ -19,7 +19,8 @@ def reverse()
     str[length-i] = temp
     i+=1
   end
-  puts str.join
+  str = str.join
+  puts str
 end
 
 reverse()
